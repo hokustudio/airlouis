@@ -1,0 +1,280 @@
+#connect {
+  z-index: 10;
+  position: fixed;
+  list-style: none;
+}
+
+#connect li {
+  float: center;
+  margin-right: 20px;
+  color: white;
+}
+
+#connect li span {
+  display: block;
+  font-size: 15px;
+  text-shadow: 0 1px 1px #000;
+}
+
+#connect li .version:before {
+  content: "v";
+}
+
+@media screen and (max-width: 767px) {
+  #connect {
+    margin-left: 0;
+  }
+}
+
+.welcomem{
+	color: white;
+	position:fixed; 
+	z-index:10;
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+	margin-left: -10px;
+}
+
+.welcome{
+	color: white;
+	position:fixed; 
+	z-index:10;
+	padding:100px 285px;
+	margin-left: 2px;
+
+}
+
+.desc{
+	color: white;
+	margin-top: 200px;
+	font-size: 18px;
+}
+
+.regs{
+	z-index: 10;
+  	position: fixed;
+  	margin:auto;
+  	width: 100%;
+  	margin-top: 400px;
+  	margin-left: 10px;
+  	text-align: center;
+}
+
+.reg{
+	z-index: 10;
+  	position: fixed;
+  	margin-top: 400px;
+  	width: 100%;
+  	text-align: center;
+  	margin-left: 10px;
+}
+
+form > button[type="submit"].search{
+  margin-top: -8px;
+  margin-right: 15px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-color:  #92A5A3;
+}
+
+form > button[type="submit"].search > img{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+form > input[type="text"].form{
+  color: #ebebeb;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid;
+  border-color:  #92A5A3;
+  box-shadow: none;
+  font-size: 16px;
+}
+
+
+
+form.loginF > input[type="text"], form.loginF > input[type="password"] {
+  color: #1a1a1a;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid;
+  border-color:  #92A5A3;
+  box-shadow: none;
+  font-size: 16px;
+}
+
+
+form > ::-webkit-input-placeholder {
+   color: #e7e7e7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+
+:-ms-input-placeholder {  
+   color: red;  
+}
+
+header > div.slider {
+  width: 110%;
+  margin-left: -15px;
+  padding: 0px;
+}
+
+header > div.slider > div > ul > li{
+  margin-left: 0px;
+  padding: 0px;
+}
+
+
+.progress.round{
+    height: 1rem;
+}
+
+.progress.round .meter {
+  border-radius: 999px;
+  background: #43AC6A;
+  border: 0px;
+}
+
+.padding{
+  padding: 0.25rem;
+}
+
+.zeropadding{
+  padding: 0;
+}
+
+.header .wrap{
+  white-space: nowrap;
+  display: block;
+  max-height: 36px;
+  min-height: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.category{
+  text-align: center;
+  background-color: #f7f7f7;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-shadow: 0px 3px 0px 0px #d4d4d5, 0px 0px 0px 1px #d4d4d5;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  z-index: '';
+  margin-bottom: 2px;
+}
+
+
+.suggested{
+  width: 100%;
+  margin-top: 1em;
+}
+
+.suggested > .image {
+  display: block;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  position: relative;
+  padding: 0em;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.suggested > div > div > div.content {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background: none;
+  margin: 0em;
+  padding: 1em;
+  padding-left: 0em;
+  padding-top: 0em;
+  padding-right: 1em;
+  box-shadow: none;
+  font-size: 1em;
+  border: none;
+  border-radius: 0em;
+}
+
+.suggested > div > div > div.content > .header {
+  font-size: 1.5em;
+  display: block;
+  margin: 0em;
+  padding-right: 0em;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.suggested > div > div > div.content > .meta{
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.suggested > div > div > div.content > .description{
+  clear: both;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: normal;
+  overflow: hidden;
+  position: relative;
+}
+
+.suggested > div > div > div.extra > .created, .friends{
+  max-width: 100%;
+  min-height: 0em !important;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  position: static;
+  background: none;
+  width: auto;
+  margin: 0em 0em;
+  top: 0em;
+  left: 0em;
+  color: rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 1em;
+}
+
+.logo{
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+}
+
+.signuplink{
+  margin-top: 10rem;
+}
+
+.signinlink{
+  margin-top: 5rem;
+}
+
+.signuplink > div > a,
+.signinlink > div > a{
+  color: #169283;
+}
