@@ -2,16 +2,16 @@
 
 class VerifyLogin extends CI_Controller {
     
-    public function UserLogin() {
+    function UserLogin() {
         
-        if (!empty($_POST)) {
+        if (isset($_POST)) {
             $query_params = array(
             'user_name' => $_POST['username']
             );
 
             $this->load->model('usermodel');
-            $check = $this->usermodel->CheckUserpass('users',$query_params);
-            $validated_info = false;
+            $check = $this->usermodel->CheckUserpass($query_params);
+
             $login_ok = false;
             $pass = md5($_POST['password']);    
             foreach ($check as $key) {
@@ -32,22 +32,15 @@ class VerifyLogin extends CI_Controller {
                         );
                     $this->session->set_userdata($array_items);
                 }
-                $response["success"] = 1;
-                $response["message"] = "Login successful!";
-                json_encode($response);
+
                 redirect(site_url('home'));
             }
-
             else {
-                $this->session->set_flashdata('notification', 'Warning: invalid username or password');
-                $response["success"] = 0;
-                $response["message"] = "Your username or password is invalid!";
-                json_encode($response);
-                redirect(site_url('welcome'));
+                redirect(site_url('login'));
             }
         }
         else {
-            redirect(site_url('welcome'));
+            redirect(site_url('login'));
         }      
     }
 }

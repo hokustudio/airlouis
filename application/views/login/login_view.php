@@ -1,4 +1,4 @@
-<?php $this->session->flashdata('notification')
+<?php $this->session->flashdata('notification');
 ?>
 <div class="row logo">
 	<div class="small-4 medium-3 large-2 columns small-centered medium-centered large-centered">

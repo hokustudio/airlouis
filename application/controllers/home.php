@@ -7,7 +7,7 @@ class Home extends CI_Controller {
    		parent::__construct();
  	}
 	
-	public function index()
+	function index()
 	{
     $this->load->model('usermodel');
     if($this->session->userdata('logged_in')) {
@@ -38,7 +38,7 @@ class Home extends CI_Controller {
    	}
 	}
 
-	public function UserLogout(){
+	function UserLogout(){
 		$this->session->unset_userdata('logged_in');
     $this->session->sess_destroy();
     //session_destroy();

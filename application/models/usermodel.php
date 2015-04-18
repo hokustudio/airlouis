@@ -7,59 +7,27 @@ class Usermodel extends CI_Model {
          parent::__construct();
     }
 
-	public function CheckUsername($tabelName, $query_params)
+	function CheckUsername($query_params)
 	{
 		$this->db->select(1);
-		$this->db->from($tabelName);
+		$this->db->from('users');
 		$this->db->where($query_params);
 		$query = $this->db->get();
-
-		if(!$query){
-			$response["success"] = 0;
-	        $response["message"] = "Database Error1. Please Try Again!";
-	        die(json_encode($response));
-		}
 
     	return $query->num_rows();
 	}
 
-	public function InsertUser($tabelName, $query_params)
-	{
-		$query = $this->db->insert($tabelName, $query_params);
-		if(!$query){
-			$response["success"] = 0;
-	        $response["message"] = "Database Error2. Please Try Again!";
-	        die(json_encode($response));
-		}
-    }
-
-    public function CheckUserpass($tabelName, $query_params)
+	function CheckUserpass($query_params)
     { 
         $this->db->select('user_id, user_name, user_password');
-        $this->db->from($tabelName);
+        $this->db->from('users');
         $this->db->where($query_params);
         $query = $this->db->get();
-
-        if(!$query){
-        	$response["success"] = 0;
-        	$response["message"] = "Database Error3. Please Try Again!";
-        	die(json_encode($response));
-        }
 
         return $query->result_array();
     }
 
-	public function GetUser($user_name){
-		$this->db->select('*');
-		$this->db->from('users');
-		$this->db->where('user_name', $user_name);
-
-		$query = $this->db->get();
-
-		return $query->result_array();
-	}
-
-	public function CheckUser($user_name)
+    function CheckUser($user_name)
 	{
 		$this->db->select('*');
 		$this->db->from('users');
@@ -77,10 +45,29 @@ class Usermodel extends CI_Model {
 		}
 	}
 
-	public function UpdateUser($user_id, $data) { 
-		$this->db->where('user_id', $user_id);
-		$this->db->update('users', $data); 
-	}    
+	function InsertUser($query_params)
+	{
+		$query = $this->db->insert('users', $query_params);
+    }
+
+	function GetUser(){
+		$this->db->select('*');
+		$this->db->from('users');
+
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
+	function UpdateUser($query_params) { 
+		$this->db->where('user_id', $this->uri->segment(3));
+		$this->db->update('users', $query_params); 
+	}  
+
+	function DeleteUser() { 
+		$this->db->where('user_id', $this->uri->segment(3));
+		$this->db->delete('users'); 
+	}  
 
 	function SendEmail($username,$email,$code)
     {

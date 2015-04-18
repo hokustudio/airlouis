@@ -12,8 +12,5 @@
 		<tr>
 			<td> <?php echo $row['user_phone_number']; ?> </td>
 		</tr>
-		<tr>
-			<td> <?php echo $row['user_identity_number']; ?> </td>
-		</tr>
 	</table>
 <?php } ?>

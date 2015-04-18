@@ -4,48 +4,36 @@ class Register extends CI_Controller {
 
 	function PostUser() {
 	   
-       if (!empty($_POST)) {
+       if (isset($_POST)) {
     
             if (empty($_POST['username'])) {
-            	$response["success"] = 0;
-            	$response["message"] = "Please enter username";
-      
-            	die(json_encode($response));
+            	
     		}
 
     	   else if(empty($_POST['email'])) {
-        		$response["success"] = 0;
-            	$response["message"] = "Please enter email";
-      
-            	die(json_encode($response));
+        		
     		}
 
         	else if (empty($_POST['password'])) {
-        		$response["success"] = 0;
-            	$response["message"] = "Please enter password";
-      
-            	die(json_encode($response));
+        		
         	}
 
         	else if (empty($_POST['phonenumber'])) {
-        		$response["success"] = 0;
-            	$response["message"] = "Please enter phone number";
-      
-            	die(json_encode($response));
+        		
         	}
 
             /*check usename*/
             $query_params = array('user_name' => $_POST['username']);
 
             $this->load->model('usermodel');
-            $check = $this->usermodel->CheckUsername('users',$query_params);
-    
+            $check = $this->usermodel->CheckUsername($query_params);
             $code = md5(uniqid(rand()));
 
             if($check) {
-                $response["success"] = 0;
+                //$response["success"] = 0;
                 $response["message"] = "I'm sorry, this username is already in use";
-                die(json_encode($response));
+                //die(json_encode($response));
+                redirect(site_url('signup'));
             }
             else {
                 date_default_timezone_set("Asia/Bangkok");
@@ -64,7 +52,7 @@ class Register extends CI_Controller {
                 );
         	}
 
-            $this->usermodel->InsertUser('users', $query_params);
+            $this->usermodel->InsertUser($query_params);
             $this->usermodel->SendEmail($_POST['username'],$_POST['email'],$code);
 
             if(!is_dir("uploads/".$_POST['username']."/")){
