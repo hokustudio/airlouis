@@ -110,20 +110,41 @@ form.loginF > input[type="text"], form.loginF > input[type="password"] {
 
 
 form > ::-webkit-input-placeholder {
+   color: #aacdc9;
+}
+
+form > :-moz-placeholder { /* Firefox 18- */
+   color: #e7e7e7;  
+}
+
+form > ::-moz-placeholder {  /* Firefox 19+ */
+   color: #e7e7e7;  
+}
+
+form > ::-ms-input-placeholder {  
    color: #e7e7e7;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: red;  
+form.loginF > ::-webkit-input-placeholder {
+   color: #bdbdbd;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   color: red;  
+form.loginF > :-moz-placeholder { /* Firefox 18- */
+   color: #bdbdbd;  
 }
 
-:-ms-input-placeholder {  
-   color: red;  
+form.loginF > ::-moz-placeholder {  /* Firefox 19+ */
+   color: #bdbdbd;  
 }
+
+form.loginF > :-ms-input-placeholder {  
+   color: #bdbdbd;  
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+    background-color: #0d7468; }
+button:hover, button:focus, .button:hover, .button:focus {
+    color: #FFFFFF; }
 
 header > div.slider {
   width: 110%;
@@ -255,7 +276,6 @@ header > div.slider > div > ul > li{
   box-shadow: none;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
   white-space: nowrap;
   overflow: hidden;
   padding-right: 1em;

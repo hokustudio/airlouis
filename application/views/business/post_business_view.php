@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-     
-    </head>
- 	<body>
  		<h1><?php echo $this->session->userdata('user_name');?></h1>
  		<h1><?php echo $this->session->userdata('user_id');?></h1>
 		<h1>Add Your Business</h1> 
@@ -47,5 +41,3 @@
 		 		
 		 		<input type="submit" name="submit" id="submit" value="Submit"/><br/>
 		 </form>
- </body>
- </html>

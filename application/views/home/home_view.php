@@ -125,10 +125,13 @@
 	                      <div class="header"><?php echo $bname; ?></div>
 	                      <div class="meta"><a class="group"><?php echo $bcat; ?></a></div>
 	                      <div class="description hide-for-small"><?php echo $bdesc; ?></div>
+	                      <div class="description hide-for-medium hide-for-large"><?php echo $bslot.' slots'; ?></div>
 	                  </div>
 	                  <div class="extra content">
-	                      <a class="right floated created"><?php echo $bval.' IDR'; ?></a>
-	                      <a class="friends"><?php echo $bslot.' slots'; ?></a>
+	                      <a class="right floated created hide-for-small"><?php echo $bval.' IDR'; ?></a>
+	                      <a class="friends hide-for-small"><?php echo $bslot.' slots'; ?></a>
+	                      <a class="right floated created hide-for-large hide-for-medium">IDR</a>
+	                      <a class="friends hide-for-large hide-for-medium"><?php echo $bval; ?></a>
 	                  </div>
 	                </div>
 	      		  </div>

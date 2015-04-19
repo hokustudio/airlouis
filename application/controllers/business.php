@@ -5,7 +5,9 @@ class Business extends CI_Controller {
     public function index()
     {
         if($this->session->userdata('logged_in')) {
+            $this->load->view('headerfooter/header_view');
             $this->load->view('business/post_business_view');
+            $this->load->view('headerfooter/footer_view');
         }
         else {
             redirect('welcome', 'refresh');

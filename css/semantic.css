@@ -689,7 +689,7 @@ input::selection {
   outline: none;
   border: none;
   vertical-align: baseline;
-  background-color: #e0e0e0;
+  background-color: #169283;
   color: rgba(0, 0, 0, 0.6);
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em 0.25em 0em 0em;
@@ -723,7 +723,7 @@ input::selection {
 ---------------*/
 
 .ui.button:hover {
-  background-color: #e8e8e8;
+  background-color: #0d7468;
   background-image: none;
   box-shadow: '';
   color: rgba(0, 0, 0, 0.8);
@@ -2881,7 +2881,7 @@ input::selection {
 
 .ui.teal.buttons .button,
 .ui.teal.button {
-  background-color: #00b5ad;
+  background-color: #169283;
   color: #ffffff;
   text-shadow: none;
   background-image: none;
@@ -2893,7 +2893,7 @@ input::selection {
 
 .ui.teal.buttons .button:hover,
 .ui.teal.button:hover {
-  background-color: #00c4bc;
+  background-color: #0d7468;
   color: #ffffff;
   text-shadow: none;
 }
@@ -20590,7 +20590,7 @@ ol.ui.horizontal.list li:before,
   flex-grow: 1;
   background: none;
   margin: 0em;
-  padding: 1em 1em;
+  padding: 1em 1em 0.2em 1em;
   box-shadow: none;
   font-size: 1em;
   border: none;
@@ -20897,13 +20897,17 @@ ol.ui.horizontal.list li:before,
 /*******************************
            Variations
 *******************************/
-
 /*-------------------
         Fluid
 --------------------*/
 
 .ui.fluid.card {
-  width: 100%;
+  width: 100%;.card > div.extra > a.relative{
+  color: red;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
   max-width: 9999px;
 }
 
