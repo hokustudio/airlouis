@@ -1,6 +1,12 @@
- 		<h1><?php echo $this->session->userdata('user_name');?></h1>
- 		<h1><?php echo $this->session->userdata('user_id');?></h1>
-		<h1>Add Your Business</h1> 
+ 	<nav class="top-bar" data-topbar role="navigation">
+ 		<ul class="left">
+ 			<li><a href="<?php echo base_url()."home"; ?>"><img class="back" src="img/back.png"/></a></li>
+ 		</ul>
+ 		<ul>
+		    <li class="name"><h1>Add Business</h1></li>
+		 </ul>
+ 	</nav>
+ 		
 			<form action="<?php echo base_url()."business/PostBusiness";?>" method="post" enctype="multipart/form-data"> 
 		        <input type="text" name="bname" id="bname" placeholder="Business Name or Company Name" style="width: 400px;"/><br/><br/>
 			    

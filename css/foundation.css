@@ -1718,7 +1718,8 @@ meta.foundation-mq-topbar {
   height: 2.8125rem;
   line-height: 2.8125rem;
   position: relative;
-  background: #333333;
+  background-color: #169283;
+  color: #FFFFFF;
   margin-bottom: 0; }
   .top-bar ul {
     margin-bottom: 0;
@@ -1751,14 +1752,17 @@ meta.foundation-mq-topbar {
     font-size: 16px; }
     .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span {
       line-height: 2.8125rem;
-      font-size: 1.0625rem;
-      margin: 0; }
+      font-size: 1.5rem;
+      font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      color: #FFFFFF;
+      margin-left:50px; }
       .top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name p a, .top-bar .name span a {
         font-weight: normal;
         color: #FFFFFF;
         width: 75%;
         display: block;
-        padding: 0 0.9375rem; }
+        padding: 0 0.9375rem; 
+      height: 2.3125rem;}
   .top-bar .toggle-topbar {
     position: absolute;
     right: 0;

@@ -298,3 +298,9 @@ header > div.slider > div > ul > li{
 .signinlink > div > a{
   color: #169283;
 }
+
+.back{
+  max-width: 25px;
+  margin-top: 8px;
+}
+
