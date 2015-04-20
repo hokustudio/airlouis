@@ -10,5 +10,5 @@
     <link rel="stylesheet" href="css/simple-line-icons.css"/>
     <link rel="stylesheet" href="css/semantic.css"/>
     <script src="js/vendor/modernizr.js"></script>
-
+    <script src="<?php echo base_url().'/js/jquery-1.11.2.min.js' ?>"></script>
   </head>

@@ -15,19 +15,12 @@
 	    </nav>
 	 <!-- ENDOFNAVIGATION -->
 
-<?php 
-	foreach ($datauser as $row) {
-		$username =  $row['user_name'];
-			//echo $row['user_email'];
-	}
-?>
-
 	<!-- MENU -->
 		<aside class="left-off-canvas-menu">
 	      <ul class="off-canvas-list">
 	        <li><label>Airlouis | <?php echo $this->session->userdata('user_name');?></label></li>
 	        <li><a href="<?php echo base_url()."home";?>">Home</a></li>
-	        <li><a href="<?php echo base_url()."profile/index/$username";?>">Profile</a></li>
+	        <li><a href="<?php echo base_url()."profile/index/".$this->session->userdata('user_name')?>">Profile</a></li>
 	        <li><a href="<?php echo base_url()."business";?>">Add Business</a></li>
 	        <li><a href="<?php echo base_url()."index.php/business";?>">Message</a></li>
 	        <li><a href="<?php echo base_url()."business/mybusiness";?>">My Business</a></li>
@@ -107,7 +100,8 @@
 	          </div>
 	          <div class="small-12 medium-8 large-8 medium-centered large-centered columns">
 
-	         	<?php 
+	         	<?php
+	         		$i=1;
 					foreach ($databusiness as $row) {
 					$bname =  $row['business_name'];
 					$bimgsrc = $row['business_logo'];
@@ -135,7 +129,7 @@
 	                  </div>
 	                </div>
 	      		  </div>
-				<?php } ?>
+				<?php if($i++ > 2) { break;}} ?>
 
 	      		</div>
 	      	  </div>

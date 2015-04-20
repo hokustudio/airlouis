@@ -11,19 +11,8 @@ class Home extends CI_Controller {
 	{
     $this->load->model('usermodel');
     if($this->session->userdata('logged_in')) {
-     	$session_data = $this->session->userdata('logged_in');
-    	$data['username'] = $session_data['username'];
-      //$datauser =  $this->usermodel->GetUser($session_data['username']); 
-      //$data['user'] = $this->usermodel->GetUser($this->session->userdata('user_id'));
 
-      
-      
-      $data['datauser'] = $this->usermodel->GetUser($this->session->userdata('user_name'));
-      //foreach ($datauser as $row) {
-      //  echo $row['user_id'];
-      //  echo $row['user_name'];
-      //  echo $row['user_email'];
-      //}
+      $data['datauser'] = $this->usermodel->GetUserbyUsername($this->session->userdata('user_name'));
       $this->load->model('businessmodel');
       $data['databusiness'] = $this->businessmodel->GetBusinessData('business');
 
@@ -38,7 +27,7 @@ class Home extends CI_Controller {
    	}
 	}
 
-	function UserLogout(){
+	function UserLogout() {
 		$this->session->unset_userdata('logged_in');
     $this->session->sess_destroy();
     //session_destroy();

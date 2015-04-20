@@ -10,7 +10,7 @@ class VerifyLogin extends CI_Controller {
             );
 
             $this->load->model('usermodel');
-            $check = $this->usermodel->CheckUserpass($query_params);
+            $check = $this->usermodel->CheckUserbyPassword($query_params);
 
             $login_ok = false;
             $pass = md5($_POST['password']);    

@@ -26,7 +26,7 @@ class Register extends CI_Controller {
             $query_params = array('user_name' => $_POST['username']);
 
             $this->load->model('usermodel');
-            $check = $this->usermodel->CheckUsername($query_params);
+            $check = $this->usermodel->CheckUserbyUsername($query_params);
             $code = md5(uniqid(rand()));
 
             if($check) {

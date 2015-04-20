@@ -7,17 +7,7 @@ class Usermodel extends CI_Model {
          parent::__construct();
     }
 
-	function CheckUsername($query_params)
-	{
-		$this->db->select(1);
-		$this->db->from('users');
-		$this->db->where($query_params);
-		$query = $this->db->get();
-
-    	return $query->num_rows();
-	}
-
-	function CheckUserpass($query_params)
+	function CheckUserbyPassword($query_params)
     { 
         $this->db->select('user_id, user_name, user_password');
         $this->db->from('users');
@@ -27,7 +17,7 @@ class Usermodel extends CI_Model {
         return $query->result_array();
     }
 
-    function CheckUser($user_name)
+    function CheckUserbyUsername($user_name)
 	{
 		$this->db->select('*');
 		$this->db->from('users');
@@ -45,6 +35,15 @@ class Usermodel extends CI_Model {
 		}
 	}
 
+	function GetUserbyUsername($user_name){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('user_name',$user_name);
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
 	function InsertUser($query_params)
 	{
 		$query = $this->db->insert('users', $query_params);
@@ -59,8 +58,8 @@ class Usermodel extends CI_Model {
 		return $query->result_array();
 	}
 
-	function UpdateUser($query_params) { 
-		$this->db->where('user_id', $this->uri->segment(3));
+	function UpdateUser($user_name,$query_params) { 
+		$this->db->where('user_name', $user_name);
 		$this->db->update('users', $query_params); 
 	}  
 
