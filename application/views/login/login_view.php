@@ -8,8 +8,8 @@
 
 <div class="row">
 	<div class="small-10 medium-6 large-6 columns small-centered medium-centered large-centered">
-			<form class="loginF" action="<?php echo base_url()."index.php/verifylogin/UserLogin";?>" method="post"> 
-		        <input type="text" class="form" placeholder="Username" name="username" value="<?php echo set_value('email')?>" />  
+			<form class="loginF" action="<?php echo base_url()."verifylogin/UserLogin";?>" method="post"> 
+		        <input type="text" class="form" placeholder="Username" name="username" value="<?php echo set_value('username')?>" />  
 			    <input type="password" class="form" placeholder="Password"  name="password" value="<?php echo set_value('password')?>" />  
 			    <button type="submit" class="button expand" value="Log In" />SIGN IN</button>
 		 	</form>
