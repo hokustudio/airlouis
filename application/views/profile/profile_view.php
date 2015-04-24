@@ -47,6 +47,7 @@
 		</tr>
 	</table>
 	<?php } ?>
+	
 	<script>
         $(document).ready(function(e) {
         	$(".cancel").hide();

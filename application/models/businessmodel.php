@@ -14,7 +14,7 @@ class Businessmodel extends CI_Model {
     	return $query->result_array();
 	}*/
 
-	public function GetMyBusiness($user_id,$tableName)
+	function GetMyBusinessbyName($user_id,$tableName)
 	{
 		$this->db->select('*');
 		$this->db->from($tableName);
@@ -25,14 +25,24 @@ class Businessmodel extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function GetBusinessData($tableName)
+	function GetBusinessbyName($bname) {
+		$this->db->select('*');
+		$this->db->from('business');
+		$this->db->where('business_name', $bname);
+
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
+	function GetBusinessData($tableName)
 	{
 		$query = $this->db->get($tableName);
 
 		return $query->result_array();	
 	}
 	
-	public function InsertBusiness($tabelName, $query_params)
+	function InsertBusiness($tabelName, $query_params)
 	{
 		$query = $this->db->insert($tabelName, $query_params);
 		if(!$query){

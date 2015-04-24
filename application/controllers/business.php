@@ -2,7 +2,7 @@
 
 class Business extends CI_Controller {
 
-    public function index()
+    function index()
     {
         if($this->session->userdata('logged_in')) {
             $this->load->view('headerfooter/header_view');
@@ -10,11 +10,11 @@ class Business extends CI_Controller {
             $this->load->view('headerfooter/footer_view');
         }
         else {
-            redirect('welcome', 'refresh');
+           redirect('welcome', 'refresh');
         }       
     }
 
-    public function GetBusiness()
+    function GetBusiness()
     {
         $this->load->model('businessmodel');
         $business = $this->businessmodel->getBusiness();
@@ -46,7 +46,7 @@ class Business extends CI_Controller {
         }
     }
 
-    public function PostBusiness()
+    function PostBusiness()
     {
         if (!empty($_POST)) {
     
@@ -209,13 +209,12 @@ class Business extends CI_Controller {
 
         redirect(site_url('home'));     
         } else {
-                redirect(site_url('welcome')); 
+                //redirect(site_url('welcome')); 
         } 
         mysql_close();       
     }
 
-    public function MyBusiness()
-    {
+    function MyBusiness() {
         $this->load->model('businessmodel');
 
         $data['mydatabusiness'] = $this->businessmodel->GetMyBusiness($this->session->userdata('user_id'),'business');
@@ -223,5 +222,22 @@ class Business extends CI_Controller {
         $this->load->view('headerfooter/header_view');
         $this->load->view('business/my_business_view', $data);
         $this->load->view('headerfooter/footer_view'); 
+    }
+
+    function AddBusiness() {
+        $this->load->view('headerfooter/header_view');
+        $this->load->view('business/post_business_view');
+        $this->load->view('headerfooter/footer_view');
+    }
+
+    function DetailBusiness() {
+        $this->load->model('businessmodel');
+        $bname = urldecode($this->uri->segment(3));
+
+        $data['databusiness'] = $this->businessmodel->GetBusinessbyName($bname);
+
+        $this->load->view('headerfooter/header_view');
+        $this->load->view('business/detail_business_view.php',$data);
+        $this->load->view('headerfooter/footer_view');
     }
 }

@@ -5,23 +5,6 @@ class Register extends CI_Controller {
 	function PostUser() {
 	   
        if (isset($_POST)) {
-    
-            if (empty($_POST['username'])) {
-            	
-    		}
-
-    	   else if(empty($_POST['email'])) {
-        		
-    		}
-
-        	else if (empty($_POST['password'])) {
-        		
-        	}
-
-        	else if (empty($_POST['phonenumber'])) {
-        		
-        	}
-
             /*check usename*/
 
             $this->load->model('usermodel');

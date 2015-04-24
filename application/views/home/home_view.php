@@ -20,9 +20,8 @@
 	      <ul class="off-canvas-list">
 	        <li><label>Airlouis | <?php echo $this->session->userdata('user_name');?></label></li>
 	        <li><a href="<?php echo base_url()."home";?>">Home</a></li>
-	        <li><a href="<?php echo base_url()."profile/index/".$this->session->userdata('user_name')?>">Profile</a></li>
+	        <li><a href="<?php echo base_url()."profile/myprofile/".$this->session->userdata('user_name')?>">Profile</a></li>
 	        <li><a href="<?php echo base_url()."business";?>">Add Business</a></li>
-	        <li><a href="<?php echo base_url()."index.php/business";?>">Message</a></li>
 	        <li><a href="<?php echo base_url()."business/mybusiness";?>">My Business</a></li>
 	        <li><a href="<?php echo base_url()."investation";?>">My Investation</a></li>
 	        <li><a href="<?php echo site_url('home/UserLogout'); ?>">Logout</a></li>      
@@ -109,8 +108,8 @@
 					$bdesc = $row['business_description'];
 					$bslot = $row['business_slot_investments'];
 					$bval = $row['business_value_investments'];
-				?>
-					<div class="small-4 medium-4 large-4 columns padding">
+				?>	<a href="<?php echo base_url()."business/detailbusiness/".$bname?>">
+					<div class="small-4 medium-4 large-4 columns padding" >
 	                <div class="ui card">
 	                  <div class="image">
 	                    <img src="<?php echo $bimgsrc ?>">
@@ -129,6 +128,7 @@
 	                  </div>
 	                </div>
 	      		  </div>
+	      		  </a>
 				<?php if($i++ > 2) { break;}} ?>
 
 	      		</div>
