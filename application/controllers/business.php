@@ -217,7 +217,7 @@ class Business extends CI_Controller {
     function MyBusiness() {
         $this->load->model('businessmodel');
 
-        $data['mydatabusiness'] = $this->businessmodel->GetMyBusiness($this->session->userdata('user_id'),'business');
+        $data['mydatabusiness'] = $this->businessmodel->GetMyBusiness($this->session->userdata('user_id'));
 
         $this->load->view('headerfooter/header_view');
         $this->load->view('business/my_business_view', $data);

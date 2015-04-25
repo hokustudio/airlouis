@@ -2,21 +2,25 @@
 
 class Profile extends CI_Controller {
 	
-	function index() {
-        $user_name = $this->uri->segment(2);
+	function index($user_name = null) {
+        
+        //$this->load->view('headerfooter/header_view');
+        $this->load->view('profile/profile_view.php');
+        //$this->load->view('headerfooter/footer_view');
+        echo $user_name;
         $this->load->model('usermodel');
-        $check = $this->usermodel->CheckUserbyUsername($user_name);
+        //$check = $this->usermodel->CheckUserbyUsername($user_name);
 
-        if($check) {
-            $data['datauser'] = $this->usermodel->GetUserbyUsername($user_name);
+        //if($check) {
+        //    $data['datauser'] = $this->usermodel->GetUserbyUsername($user_name);
 
-            $this->load->view('headerfooter/header_view');
-            $this->load->view('profile/profile_view.php',$data);
-            $this->load->view('headerfooter/footer_view');
-        }
-    	else {
-    		echo "user not exist";
-    	}
+        //    $this->load->view('headerfooter/header_view');
+        //    $this->load->view('profile/profile_view.php',$data);
+        //    $this->load->view('headerfooter/footer_view');
+        //}
+    	//else {
+    	//	echo "user not exist";
+    	//}
     	//}
     }
 

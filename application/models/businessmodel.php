@@ -14,10 +14,10 @@ class Businessmodel extends CI_Model {
     	return $query->result_array();
 	}*/
 
-	function GetMyBusinessbyName($user_id,$tableName)
+	function GetMyBusiness($user_id)
 	{
 		$this->db->select('*');
-		$this->db->from($tableName);
+		$this->db->from('business');
 		$this->db->where('business_owner_id', $user_id);
 
 		$query = $this->db->get();
