@@ -35,6 +35,15 @@ class Usermodel extends CI_Model {
 		}
 	}
 
+	function GetUserbyId($user_id){
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('user_id',$user_id);
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
 	function GetUserbyUsername($user_name){
 		$this->db->select('*');
 		$this->db->from('users');

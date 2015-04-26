@@ -37,6 +37,7 @@ class Businessmodel extends CI_Model {
 
 	function GetBusinessData($tableName)
 	{
+		$this->db->order_by('business_id', 'desc');
 		$query = $this->db->get($tableName);
 
 		return $query->result_array();	
@@ -45,12 +46,6 @@ class Businessmodel extends CI_Model {
 	function InsertBusiness($tabelName, $query_params)
 	{
 		$query = $this->db->insert($tabelName, $query_params);
-		if(!$query){
-			$response["success"] = 0;
-	        $response["message"] = "Database Error2. Please Try Again!";
-	        die(json_encode($response));
-		}
-
     }
 	
  }

@@ -22,6 +22,7 @@
 	        <li><a href="<?php echo base_url()."home";?>">Home</a></li>
 	        <li><a href="<?php echo base_url()."profile/myprofile/".$this->session->userdata('user_name')?>">Profile</a></li>
 	        <li><a href="<?php echo base_url()."business";?>">Add Business</a></li>
+	        <li><a href="<?php echo base_url()."investrequest";?>">Invest Request</a></li>
 	        <li><a href="<?php echo base_url()."business/mybusiness";?>">My Business</a></li>
 	        <li><a href="<?php echo base_url()."investation";?>">My Investation</a></li>
 	        <li><a href="<?php echo site_url('home/UserLogout'); ?>">Logout</a></li>      
