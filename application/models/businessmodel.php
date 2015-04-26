@@ -25,6 +25,16 @@ class Businessmodel extends CI_Model {
 		return $query->result_array();
 	}
 
+	function GetBusinessbyId($bid) {
+		$this->db->select('*');
+		$this->db->from('business');
+		$this->db->where('business_id', $bid);
+
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
 	function GetBusinessbyName($bname) {
 		$this->db->select('*');
 		$this->db->from('business');

@@ -36,47 +36,52 @@
 			<td></td> 	
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_category']; ?></span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo 'slots '.$row['business_slot_investments']; ?></span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_value_investments'].' IDR'; ?></span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_marketing_plan']; ?></span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_production_plan']; ?></span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_financial_plan']; ?></span>
-			</td>
+			</td colspan="2">
 		</tr>
 		<tr>
-			<td>
+			<td colspan="2">
 				<span><?php echo $row['business_development_plan']; ?></span>
 			</td>
 		</tr>
-		<tr>
-			<td>
+		<tr> <?php 
+			if($this->session->userdata('user_id') != $row['business_owner_id']) {
+			?>
+			<td colspan="2">
 				<form action="<?php echo base_url().'investrequest/request/'.$this->session->userdata('user_id').'/'.$row['business_id'];?>" method="post">
 					<input type="submit" name="requestinvest" value="request invest"/>
 					<input type="submit" name="sendmessage" value="send message"/>
 				</form>
 			</td>
+			<?php }
+			?>
+
 		</tr>
 	</table>
 <?php } ?>

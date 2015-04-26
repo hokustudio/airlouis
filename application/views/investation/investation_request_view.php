@@ -19,7 +19,7 @@
 			foreach ($datauser as $key) {			
 			echo 'you have request from '.$key['user_name'].' to business '.$row['business_to'];
 		?>
-		<form action="<?php echo base_url().'investrequest/acceptrequest/'.$row['user_from']; ?>" method="post">
+		<form action="<?php echo base_url().'investrequest/confirmrequest/'.$row['user_from'].'/'.$row['business_to']; ?>" method="post">
 		<input type="submit" name="acceptrequest<?php echo $row['user_from'];?>" value="accept" />
 		<input type="submit" name="declinerequest<?php echo $row['user_from'];?>" value="decline" />
 		</form> <br/><br/>
