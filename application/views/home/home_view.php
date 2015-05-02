@@ -108,27 +108,29 @@
 					$bdesc = $row['business_description'];
 					$bslot = $row['business_slot_investments'];
 					$bval = $row['business_value_investments'];
-				?>	<a href="<?php echo base_url()."business/detailbusiness/".$bname?>">
+				?>	
 					<div class="small-4 medium-4 large-4 columns padding" >
-	                <div class="ui card">
-	                  <div class="image">
-	                    <img src="<?php echo $bimgsrc ?>">
-	                  </div>
-	                  <div class="content">
-	                      <div class="header"><?php echo $bname; ?></div>
-	                      <div class="meta"><a class="group"><?php echo $bcat; ?></a></div>
-	                      <div class="description hide-for-small"><?php echo $bdesc; ?></div>
-	                      <div class="description hide-for-medium hide-for-large"><?php echo $bslot.' slots'; ?></div>
-	                  </div>
-	                  <div class="extra content">
-	                      <a class="right floated created hide-for-small"><?php echo $bval.' IDR'; ?></a>
-	                      <a class="friends hide-for-small"><?php echo $bslot.' slots'; ?></a>
-	                      <a class="right floated created hide-for-large hide-for-medium">IDR</a>
-	                      <a class="friends hide-for-large hide-for-medium"><?php echo $bval; ?></a>
-	                  </div>
-	                </div>
+		                <a href="<?php echo base_url()."business/detailbusiness/".$bname?>">
+		                <div class="ui card">
+		                  <div class="image">
+		                    <img src="<?php echo $bimgsrc ?>">
+		                  </div>
+		                  <div class="content">
+		                      <div class="header wrap"><?php echo $bname; ?></div>
+		                      <div class="meta"><a class="group"><?php echo $bcat; ?></a></div>
+		                      <div class="description hide-for-small"><?php echo $bdesc; ?></div>
+		                      <div class="description hide-for-medium hide-for-large"><?php echo $bslot.' slots'; ?></div>
+		                  </div>
+		                  <div class="extra content">
+		                      <a class="right floated created hide-for-small"><?php echo $bval.' IDR'; ?></a>
+		                      <a class="friends hide-for-small"><?php echo $bslot.' slots'; ?></a>
+		                      <a class="right floated created hide-for-large hide-for-medium">IDR</a>
+		                      <a class="friends hide-for-large hide-for-medium"><?php echo $bval; ?></a>
+		                  </div>
+		                </div>
+	      		  		</a>
 	      		  </div>
-	      		  </a>
+	      		  
 				<?php if($i++ > 2) { break;}} ?>
 
 	      		</div>
